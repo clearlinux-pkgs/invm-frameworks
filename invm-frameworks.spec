@@ -4,7 +4,7 @@
 #
 Name     : invm-frameworks
 Version  : 01.00.00.2007
-Release  : 1
+Release  : 2
 URL      : https://github.com/intel/invm-frameworks/archive/v01.00.00.2007.zip
 Source0  : https://github.com/intel/invm-frameworks/archive/v01.00.00.2007.zip
 Summary  : Framework for Storage I18N, CLI and CIM applications
@@ -46,7 +46,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1510178255
+export SOURCE_DATE_EPOCH=1510182708
 mkdir clr-build
 pushd clr-build
 cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS:BOOL=ON -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DCMAKE_AR=/usr/bin/gcc-ar -DLIB_SUFFIX=64 -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_RANLIB=/usr/bin/gcc-ranlib
@@ -54,7 +54,7 @@ make VERBOSE=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1510178255
+export SOURCE_DATE_EPOCH=1510182708
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
@@ -65,81 +65,81 @@ popd
 
 %files dev
 %defattr(-,root,root,-)
-/usr/include/invm-cim/AssociationFactory.h
-/usr/include/invm-cim/AssociationMapper.h
-/usr/include/invm-cim/Attribute.h
-/usr/include/invm-cim/CimXml.h
-/usr/include/invm-cim/CimomAdapter.h
-/usr/include/invm-cim/CmpiAdapter.h
-/usr/include/invm-cim/Exception.h
-/usr/include/invm-cim/ExceptionBadAttribute.h
-/usr/include/invm-cim/ExceptionBadParameter.h
-/usr/include/invm-cim/ExceptionInvalidWqlQuery.h
-/usr/include/invm-cim/ExceptionNoMemory.h
-/usr/include/invm-cim/ExceptionNotSupported.h
-/usr/include/invm-cim/ExceptionSystemError.h
-/usr/include/invm-cim/IndicationService.h
-/usr/include/invm-cim/Instance.h
-/usr/include/invm-cim/InstanceFactory.h
-/usr/include/invm-cim/InstanceFactoryCreator.h
-/usr/include/invm-cim/IntelCmpiProvider.h
-/usr/include/invm-cim/IntelToCmpi.h
-/usr/include/invm-cim/Logger.h
-/usr/include/invm-cim/NullInstanceFactory.h
-/usr/include/invm-cim/ObjectPath.h
-/usr/include/invm-cim/ObjectPathBuilder.h
-/usr/include/invm-cim/ProviderFactory.h
-/usr/include/invm-cim/StringUtil.h
-/usr/include/invm-cim/Strings.h
-/usr/include/invm-cim/Trace.h
-/usr/include/invm-cim/Types.h
-/usr/include/invm-cim/WqlConditional.h
-/usr/include/invm-cim/WqlQuery.h
-/usr/include/invm-cim/cmpi/cmpidt.h
-/usr/include/invm-cim/cmpi/cmpift.h
-/usr/include/invm-cim/cmpi/cmpimacs.h
-/usr/include/invm-cim/cmpi/cmpios.h
-/usr/include/invm-cim/cmpi/cmpipl.h
-/usr/include/invm-cim/common_types.h
-/usr/include/invm-cim/logging.h
-/usr/include/invm-cim/revision.h
-/usr/include/invm-cim/s_str.h
-/usr/include/invm-cim/time_utilities.h
-/usr/include/invm-cim/unicode_utilities.h
-/usr/include/invm-cim/x_str.h
-/usr/include/invm-cli/CliFrameworkTypes.h
-/usr/include/invm-cli/CommandFilter.h
-/usr/include/invm-cli/CommandSpec.h
-/usr/include/invm-cli/CommandVerify.h
-/usr/include/invm-cli/DuplicateTokenErrorResult.h
-/usr/include/invm-cli/ErrorResult.h
-/usr/include/invm-cli/FeatureBase.h
-/usr/include/invm-cli/FeatureRef.h
-/usr/include/invm-cli/Framework.h
-/usr/include/invm-cli/HelpFeature.h
-/usr/include/invm-cli/HelpResult.h
-/usr/include/invm-cli/Lexer.h
-/usr/include/invm-cli/Logger.h
-/usr/include/invm-cli/NoInputErrorResult.h
-/usr/include/invm-cli/NotImplementedErrorResult.h
-/usr/include/invm-cli/ObjectListResult.h
-/usr/include/invm-cli/OutputOptions.h
-/usr/include/invm-cli/OutputOptionsValidator.h
-/usr/include/invm-cli/ParseErrorResult.h
-/usr/include/invm-cli/Parser.h
-/usr/include/invm-cli/PropertyListResult.h
-/usr/include/invm-cli/ResultBase.h
-/usr/include/invm-cli/SimpleListResult.h
-/usr/include/invm-cli/SimpleResult.h
-/usr/include/invm-cli/SyntaxErrorBadValueResult.h
-/usr/include/invm-cli/SyntaxErrorMissingValueResult.h
-/usr/include/invm-cli/SyntaxErrorResult.h
-/usr/include/invm-cli/SyntaxErrorUnexpectedValueResult.h
-/usr/include/invm-cli/Trace.h
-/usr/include/invm-cli/cr_i18n.h
-/usr/include/invm-cli/osAdapter.h
-/usr/include/invm-i18n/libIntel_i18n.h
-/usr/include/invm-i18n/system.h
+/usr/include/libinvm-cim/AssociationFactory.h
+/usr/include/libinvm-cim/AssociationMapper.h
+/usr/include/libinvm-cim/Attribute.h
+/usr/include/libinvm-cim/CimXml.h
+/usr/include/libinvm-cim/CimomAdapter.h
+/usr/include/libinvm-cim/CmpiAdapter.h
+/usr/include/libinvm-cim/Exception.h
+/usr/include/libinvm-cim/ExceptionBadAttribute.h
+/usr/include/libinvm-cim/ExceptionBadParameter.h
+/usr/include/libinvm-cim/ExceptionInvalidWqlQuery.h
+/usr/include/libinvm-cim/ExceptionNoMemory.h
+/usr/include/libinvm-cim/ExceptionNotSupported.h
+/usr/include/libinvm-cim/ExceptionSystemError.h
+/usr/include/libinvm-cim/IndicationService.h
+/usr/include/libinvm-cim/Instance.h
+/usr/include/libinvm-cim/InstanceFactory.h
+/usr/include/libinvm-cim/InstanceFactoryCreator.h
+/usr/include/libinvm-cim/IntelCmpiProvider.h
+/usr/include/libinvm-cim/IntelToCmpi.h
+/usr/include/libinvm-cim/Logger.h
+/usr/include/libinvm-cim/NullInstanceFactory.h
+/usr/include/libinvm-cim/ObjectPath.h
+/usr/include/libinvm-cim/ObjectPathBuilder.h
+/usr/include/libinvm-cim/ProviderFactory.h
+/usr/include/libinvm-cim/StringUtil.h
+/usr/include/libinvm-cim/Strings.h
+/usr/include/libinvm-cim/Trace.h
+/usr/include/libinvm-cim/Types.h
+/usr/include/libinvm-cim/WqlConditional.h
+/usr/include/libinvm-cim/WqlQuery.h
+/usr/include/libinvm-cim/cmpi/cmpidt.h
+/usr/include/libinvm-cim/cmpi/cmpift.h
+/usr/include/libinvm-cim/cmpi/cmpimacs.h
+/usr/include/libinvm-cim/cmpi/cmpios.h
+/usr/include/libinvm-cim/cmpi/cmpipl.h
+/usr/include/libinvm-cim/common_types.h
+/usr/include/libinvm-cim/logging.h
+/usr/include/libinvm-cim/revision.h
+/usr/include/libinvm-cim/s_str.h
+/usr/include/libinvm-cim/time_utilities.h
+/usr/include/libinvm-cim/unicode_utilities.h
+/usr/include/libinvm-cim/x_str.h
+/usr/include/libinvm-cli/CliFrameworkTypes.h
+/usr/include/libinvm-cli/CommandFilter.h
+/usr/include/libinvm-cli/CommandSpec.h
+/usr/include/libinvm-cli/CommandVerify.h
+/usr/include/libinvm-cli/DuplicateTokenErrorResult.h
+/usr/include/libinvm-cli/ErrorResult.h
+/usr/include/libinvm-cli/FeatureBase.h
+/usr/include/libinvm-cli/FeatureRef.h
+/usr/include/libinvm-cli/Framework.h
+/usr/include/libinvm-cli/HelpFeature.h
+/usr/include/libinvm-cli/HelpResult.h
+/usr/include/libinvm-cli/Lexer.h
+/usr/include/libinvm-cli/Logger.h
+/usr/include/libinvm-cli/NoInputErrorResult.h
+/usr/include/libinvm-cli/NotImplementedErrorResult.h
+/usr/include/libinvm-cli/ObjectListResult.h
+/usr/include/libinvm-cli/OutputOptions.h
+/usr/include/libinvm-cli/OutputOptionsValidator.h
+/usr/include/libinvm-cli/ParseErrorResult.h
+/usr/include/libinvm-cli/Parser.h
+/usr/include/libinvm-cli/PropertyListResult.h
+/usr/include/libinvm-cli/ResultBase.h
+/usr/include/libinvm-cli/SimpleListResult.h
+/usr/include/libinvm-cli/SimpleResult.h
+/usr/include/libinvm-cli/SyntaxErrorBadValueResult.h
+/usr/include/libinvm-cli/SyntaxErrorMissingValueResult.h
+/usr/include/libinvm-cli/SyntaxErrorResult.h
+/usr/include/libinvm-cli/SyntaxErrorUnexpectedValueResult.h
+/usr/include/libinvm-cli/Trace.h
+/usr/include/libinvm-cli/cr_i18n.h
+/usr/include/libinvm-cli/osAdapter.h
+/usr/include/libinvm-i18n/libIntel_i18n.h
+/usr/include/libinvm-i18n/system.h
 /usr/lib/libinvm-cim.so
 /usr/lib/libinvm-cli.so
 /usr/lib/libinvm-i18n.so

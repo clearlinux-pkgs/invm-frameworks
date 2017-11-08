@@ -29,8 +29,8 @@ index b7ae683..acdda65 100644
  add_library(invm-cim ${LIB_TYPE} ${CIMFRAMEWORK_SRC})
  
 +install (TARGETS invm-cim DESTINATION lib)
-+install (FILES ${CIMFRAMEWORK_HEADERS} DESTINATION include/invm-cim)
-+install (FILES ${CMPI_HEADERS} DESTINATION include/invm-cim/cmpi)
++install (FILES ${CIMFRAMEWORK_HEADERS} DESTINATION include/libinvm-cim)
++install (FILES ${CMPI_HEADERS} DESTINATION include/libinvm-cim/cmpi)
 +
  set_target_properties(invm-cim
         PROPERTIES
@@ -44,7 +44,7 @@ index 7a92162..1561951 100644
  add_library(invm-cli ${LIB_TYPE} ${SRC})
  
 +install (TARGETS invm-cli DESTINATION lib)
-+install (FILES ${CLIFRAMEWORK_HEADERS} DESTINATION include/invm-cli)
++install (FILES ${CLIFRAMEWORK_HEADERS} DESTINATION include/libinvm-cli)
 +
  target_compile_definitions(invm-cli
          PRIVATE -D_FORTIFY_SOURCE=2
@@ -58,7 +58,7 @@ index f96f15d..50e5bcc 100644
  add_library(invm-i18n ${LIB_TYPE} ${SRC})
  
 +install (TARGETS invm-i18n DESTINATION lib)
-+install (FILES ${I18NHEADERS} DESTINATION include/invm-i18n)
++install (FILES ${I18NHEADERS} DESTINATION include/libinvm-i18n)
 +
  # this will create the symlinks on Linux
  set_target_properties(invm-i18n
