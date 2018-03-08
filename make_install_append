@@ -1,0 +1,2 @@
+mkdir -p %{buildroot}/usr/include/libinvm-cim/cmpi
+cp -a external/invm-cim/cmpi/include/cmpi/*.h %{buildroot}/usr/include/libinvm-cim/cmpi/

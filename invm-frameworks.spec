@@ -4,7 +4,7 @@
 #
 Name     : invm-frameworks
 Version  : 01.01.00.2103
-Release  : 3
+Release  : 4
 URL      : https://github.com/intel/invm-frameworks/archive/v01.01.00.2103.tar.gz
 Source0  : https://github.com/intel/invm-frameworks/archive/v01.01.00.2103.tar.gz
 Summary  : Framework for Storage I18N, CLI and CIM applications
@@ -44,7 +44,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1520546100
+export SOURCE_DATE_EPOCH=1520549290
 mkdir clr-build
 pushd clr-build
 cmake .. -G "Unix Makefiles" -DCMAKE_INSTALL_PREFIX=/usr -DBUILD_SHARED_LIBS:BOOL=ON -DLIB_INSTALL_DIR:PATH=/usr/lib64 -DCMAKE_AR=/usr/bin/gcc-ar -DLIB_SUFFIX=64 -DCMAKE_INSTALL_LIBDIR:PATH=lib64 -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_RANLIB=/usr/bin/gcc-ranlib
@@ -52,11 +52,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1520546100
+export SOURCE_DATE_EPOCH=1520549290
 rm -rf %{buildroot}
 pushd clr-build
 %make_install
 popd
+## make_install_append content
+mkdir -p %{buildroot}/usr/include/libinvm-cim/cmpi
+cp -a external/invm-cim/cmpi/include/cmpi/*.h %{buildroot}/usr/include/libinvm-cim/cmpi/
+## make_install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -94,6 +98,11 @@ popd
 /usr/include/libinvm-cim/Types.h
 /usr/include/libinvm-cim/WqlConditional.h
 /usr/include/libinvm-cim/WqlQuery.h
+/usr/include/libinvm-cim/cmpi/cmpidt.h
+/usr/include/libinvm-cim/cmpi/cmpift.h
+/usr/include/libinvm-cim/cmpi/cmpimacs.h
+/usr/include/libinvm-cim/cmpi/cmpios.h
+/usr/include/libinvm-cim/cmpi/cmpipl.h
 /usr/include/libinvm-cim/common_types.h
 /usr/include/libinvm-cim/logging.h
 /usr/include/libinvm-cim/revision.h
