@@ -4,7 +4,7 @@
 #
 Name     : invm-frameworks
 Version  : 01.01.00.2103
-Release  : 4
+Release  : 5
 URL      : https://github.com/intel/invm-frameworks/archive/v01.01.00.2103.tar.gz
 Source0  : https://github.com/intel/invm-frameworks/archive/v01.01.00.2103.tar.gz
 Summary  : Framework for Storage I18N, CLI and CIM applications
